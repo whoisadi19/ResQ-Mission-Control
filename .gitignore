@@ -1,0 +1,33 @@
+# --- Virtual Environments (CRITICAL) ---
+# You must ignore ALL of these or your upload will be huge
+venv/
+venv_311/
+stable_venv/
+__pycache__/
+
+# --- Large/Binary Files ---
+*.exe
+ffmpeg.exe
+*.mp4
+*.avi
+*.mov
+
+# --- AI Model Files ---
+# GitHub rejects files larger than 100MB. 
+# If your FINAL_RESCUE_MODEL.pt is small (<100MB), you can remove the line below to upload it.
+*.pt
+*.onnx
+
+# --- Generated Data & Logs ---
+data/detections/
+data/mission_log.json
+runs/  # This is where YOLO saves detection test images automatically
+*.log
+
+# --- System & Config ---
+.DS_Store
+.env
+.vscode/
+
+training/datasets/
+data/

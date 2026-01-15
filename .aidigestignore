@@ -1,0 +1,9 @@
+venv/
+stable_venv/
+node_modules/
+.git/
+runs/
+*.pt
+*.jpg
+*.png
+*.mp4

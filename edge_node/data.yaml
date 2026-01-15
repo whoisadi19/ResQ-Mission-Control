@@ -1,0 +1,12 @@
+# RESQ TACTICAL DATASET CONFIG
+# Use forward slashes / even on Windows to prevent path errors
+
+path: C:/Users/User/OneDrive/Desktop/flood-rescue-system/datasets  # Base directory
+train: images/train  # Relative to 'path' above
+val: images/val      # Relative to 'path' above
+
+# Number of classes (Change this based on your dataset)
+nc: 1 
+
+# Class Names (No emojis for a classy look)
+names: ['Victim']
