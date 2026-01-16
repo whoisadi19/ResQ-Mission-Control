@@ -6,6 +6,8 @@ import time
 import cv2
 from ultralytics import YOLO
 import numpy as np
+import os
+from dotenv import load_dotenv
 
 # --- 1. CORE CONFIGURATION ---
 st.set_page_config(page_title="ResQ Operations", layout="wide", initial_sidebar_state="collapsed")
@@ -20,9 +22,15 @@ def load_yolo():
 
 model_yolo = load_yolo()
 
-# Gemini AI Setup (Replace with your Key)
-# I have hidden your key for safety in this final block
-genai.configure(api_key="AIzaSyBSURSwvegn0gop6uPH4lG-ExZkvaagbuw") 
+load_dotenv()
+
+api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    st.error("❌ API Key Missing! Check your .env file.")
+else:
+    genai.configure(api_key=api_key)
+    
 model_ai = genai.GenerativeModel('gemini-2.5-flash')
 
 # Supabase Connection
