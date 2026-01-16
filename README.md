@@ -71,6 +71,40 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 
 ---
 
+## 🖥️ Dashboard Screenshots
+
+### Live Mission Control Interface
+
+<div align="center">
+
+![Dashboard Full View](assets/dashboard_full.png)
+
+*Complete command center dashboard showing live telemetry, tactical map, and detection feed*
+
+</div>
+
+### Real-Time Telemetry
+
+<div align="center">
+
+![Dashboard Header](assets/dashboard_header.png)
+
+*Live telemetry metrics: Battery status, GPS coordinates, and signal strength*
+
+</div>
+
+### Tactical Interface
+
+<div align="center">
+
+![Dashboard Interface](assets/dashboard_interface.png)
+
+*Three-panel layout: Live Optics (camera feed), Tactical Map (victim locations), and Mission AI (Gemini assistant)*
+
+</div>
+
+---
+
 ## ✨ Features
 
 ### 🧠 Edge Node (Drone/Jetson)
@@ -418,12 +452,6 @@ Contributions are welcome! Please follow these guidelines:
 3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
