@@ -114,13 +114,6 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 - **Telemetry Streaming**: Automatic GPS coordinate logging and cloud sync
 - **Video Processing**: Support for live camera feeds and pre-recorded missions
 
-### 📊 Command Center Dashboard
-- **Live Telemetry**: Real-time battery, GPS, and mission status monitoring
-- **Tactical Map**: Interactive satellite overlay with heatmap visualization
-- **Mission AI Chat**: Gemini-powered assistant for rescue coordination
-- **Multi-Camera Support**: DroidCam, USB webcams, IP cameras, and RTSP streams
-- **Cloud Sync**: Supabase integration for multi-operator coordination
-
 ### 🎓 Training Pipeline
 - **Custom Dataset Support**: Train on your own flood rescue imagery
 - **Transfer Learning**: Fine-tune pre-trained YOLOv8 models
