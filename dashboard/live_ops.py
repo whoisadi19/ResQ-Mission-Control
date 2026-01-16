@@ -6,8 +6,6 @@ import time
 import cv2
 from ultralytics import YOLO
 import numpy as np
-import os
-from dotenv import load_dotenv
 
 # --- 1. CORE CONFIGURATION ---
 st.set_page_config(page_title="ResQ Operations", layout="wide", initial_sidebar_state="collapsed")
@@ -22,20 +20,25 @@ def load_yolo():
 
 model_yolo = load_yolo()
 
-load_dotenv()
-
-api_key = os.getenv("GEMINI_API_KEY")
+# Get API key from Streamlit secrets (for cloud) or fallback to hardcoded (for local)
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+    SUPABASE_URL = st.secrets["SUPABASE_URL"]
+    SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+except:
+    # Fallback for local development
+    api_key = "AIzaSyBSURSwvegn0gop6uPH4lG-ExZkvaagbuw"
+    SUPABASE_URL = "https://wuzhsricuvjgvtiiylhz.supabase.co"
+    SUPABASE_KEY = "sb_publishable_ZPld2JKhdzKJbw2N6CcQgw_1M4SAbu7"
 
 if not api_key:
-    st.error("❌ API Key Missing! Check your .env file.")
+    st.error("❌ API Key Missing! Check your Streamlit secrets.")
 else:
     genai.configure(api_key=api_key)
     
 model_ai = genai.GenerativeModel('gemini-2.5-flash')
 
 # Supabase Connection
-SUPABASE_URL = "https://wuzhsricuvjgvtiiylhz.supabase.co"
-SUPABASE_KEY = "sb_publishable_ZPld2JKhdzKJbw2N6CcQgw_1M4SAbu7"
 try:
     supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 except:
