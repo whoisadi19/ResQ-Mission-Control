@@ -73,15 +73,6 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 
 ## 🖥️ Dashboard Screenshots
 
-### Live Mission Control Interface
-
-<div align="center">
-
-![Dashboard Full View](assets/dashboard_full.png)
-
-*Complete command center dashboard showing live telemetry, tactical map, and detection feed*
-
-</div>
 
 ### Real-Time Telemetry
 
@@ -332,11 +323,6 @@ SUPABASE_KEY=your_supabase_anon_key
 Real-time object detection identifying stranded victims in flood zones.
 
 ![Drone Vision Demo](assets/demo_vision.png)
-
-### Command Center Dashboard
-Live telemetry, GPS tracking, and tactical map overlay for rescue coordination.
-
-![Dashboard Demo](assets/demo_dashboard.png)
 
 ---
 
