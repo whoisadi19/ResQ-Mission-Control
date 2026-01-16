@@ -10,7 +10,7 @@
 
 **AI-Powered Edge Computing Solution for Real-Time Flood Victim Detection**
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation) • [Demo](#-demo)
+🚀 **[Live Demo](https://resq-mission-control.streamlit.app/)** | [Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation)
 
 </div>
 
