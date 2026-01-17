@@ -26,17 +26,25 @@ def run_controlled_demo():
     # Speed variables
     current_delay = 30  
     mode_text = "NORMAL"
+    frame_skip = 1  # Process every frame by default
+    frame_count = 0
 
     print("\n🎮 MANUAL CONTROLS:")
     print(" [S] - SLOW MOTION")
     print(" [N] - NORMAL SPEED")
-    print(" [F] - FAST MOTION")
+    print(" [F] - FAST MOTION (skips frames)")
     print(" [Q] - QUIT DEMO\n")
 
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
             break
+
+        frame_count += 1
+        
+        # Skip frames in fast mode for true speed increase
+        if frame_count % frame_skip != 0:
+            continue
 
         # 3. RUN AI (Inference)
         # Using predict() as it is more aggressive for small object detection
@@ -58,13 +66,16 @@ def run_controlled_demo():
         
         if key == ord('s'):
             current_delay = 150
+            frame_skip = 1
             mode_text = "SLOW MOTION"
         elif key == ord('n'):
             current_delay = 30
+            frame_skip = 1
             mode_text = "NORMAL"
         elif key == ord('f'):
             current_delay = 1
-            mode_text = "FAST MOTION"
+            frame_skip = 3  # Process every 3rd frame
+            mode_text = "FAST MOTION (3x)"
         elif key == ord('q'):
             break
 
