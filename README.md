@@ -1,4 +1,4 @@
-# 🚁 Autonomous Flood Rescue Drone System
+# Autonomous Flood Rescue Drone System
 
 <div align="center">
 
@@ -9,37 +9,37 @@
 
 **AI-Powered Edge Computing Solution for Real-Time Flood Victim Detection**
 
-🚀 **[Live Demo](https://resq-mission-control.streamlit.app/)** | [Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation)
+**[Live Demo](https://resq-mission-control.streamlit.app/)** | [Features](#features) • [Quick Start](#quick-start) • [Architecture](#architecture) • [Documentation](#documentation)
 
 </div>
 
 ---
 
-## 📖 Overview
+## Overview
 
 ### The Problem
 During natural disasters like floods, **identifying stranded victims in real-time** is the biggest bottleneck for rescue teams:
-- ⏱️ Manual drone piloting is slow and requires constant operator attention
-- 🌐 Cloud-based AI solutions fail when internet connectivity is disrupted
-- 📍 GPS coordinate logging is manual and error-prone
-- 👁️ Human operators suffer from fatigue during extended search missions
+- Manual drone piloting is slow and requires constant operator attention
+- Cloud-based AI solutions fail when internet connectivity is disrupted
+- GPS coordinate logging is manual and error-prone
+- Human operators suffer from fatigue during extended search missions
 
 ### Our Solution
 An **autonomous edge-computing system** that runs YOLOv8 object detection directly on drone hardware to:
-- ✅ Detect humans in flood zones from aerial footage in real-time
-- ✅ Automatically log GPS coordinates of detected victims
-- ✅ Stream telemetry data to a centralized command center dashboard
-- ✅ Operate offline with edge inference (no cloud dependency)
+- Detect humans in flood zones from aerial footage in real-time
+- Automatically log GPS coordinates of detected victims
+- Stream telemetry data to a centralized command center dashboard
+- Operate offline with edge inference (no cloud dependency)
 
 ### Real-World Impact
-- 🎯 **Faster Response**: Automated detection reduces victim identification time by 70%
-- 🔋 **Edge Processing**: Works in disaster zones with no internet connectivity
-- 📊 **Centralized Coordination**: Live dashboard for rescue team coordination
-- 🤖 **AI-Powered**: YOLOv8 trained specifically for flood rescue scenarios
+- **Faster Response**: Automated detection reduces victim identification time by 70%
+- **Edge Processing**: Works in disaster zones with no internet connectivity
+- **Centralized Coordination**: Live dashboard for rescue team coordination
+- **AI-Powered**: YOLOv8 trained specifically for flood rescue scenarios
 
 ---
 
-## 📊 Model Performance
+## Model Performance
 
 Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and vehicles in flood scenarios:
 
@@ -71,7 +71,7 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 
 ---
 
-## 🖥️ Dashboard Screenshots
+## Dashboard Screenshots
 
 
 ### Real-Time Telemetry
@@ -96,16 +96,16 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 
 ---
 
-## ✨ Features
+## Features
 
-### 🧠 Edge Node (Drone/Jetson)
+### Edge Node (Drone/Jetson)
 - **Real-time Object Detection**: YOLOv8-based human detection optimized for aerial flood footage
 - **GPU Acceleration**: CUDA-optimized inference for RTX 4050/Jetson devices
 - **Offline Operation**: Fully functional without internet connectivity
 - **Telemetry Streaming**: Automatic GPS coordinate logging and cloud sync
 - **Video Processing**: Support for live camera feeds and pre-recorded missions
 
-### 🎓 Training Pipeline
+### Training Pipeline
 - **Custom Dataset Support**: Train on your own flood rescue imagery
 - **Transfer Learning**: Fine-tune pre-trained YOLOv8 models
 - **GPU Optimization**: Memory-efficient training for 6GB VRAM GPUs
@@ -113,7 +113,7 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -193,7 +193,7 @@ python cloud_uplink.py
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### System Overview
 
@@ -212,7 +212,7 @@ graph LR
 
 ### Component Breakdown
 
-#### 📁 Project Structure
+#### Project Structure
 
 ```
 flood-rescue-system/
@@ -256,7 +256,7 @@ flood-rescue-system/
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 ### Edge Node Usage
 
@@ -317,7 +317,7 @@ SUPABASE_KEY=your_supabase_anon_key
 
 ---
 
-## 🎬 Demo
+## Demo
 
 ### Autonomous Drone Vision (Edge Node)
 Real-time object detection identifying stranded victims in flood zones.
@@ -326,7 +326,7 @@ Real-time object detection identifying stranded victims in flood zones.
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -380,7 +380,7 @@ cd edge_node
 
 ---
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### GPU Memory Optimization
 
@@ -422,7 +422,7 @@ os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these guidelines:
 
@@ -434,7 +434,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Ultralytics** for the YOLOv8 framework
 - **Streamlit** for the dashboard framework
@@ -444,7 +444,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ---
 
-## 📞 Contact
+## Contact
 
 **Project Maintainer**: [@whoisadi19](https://github.com/whoisadi19)
 
@@ -454,7 +454,7 @@ Contributions are welcome! Please follow these guidelines:
 
 <div align="center">
 
-**⭐ Star this repo if you find it useful!**
+**Star this repo if you find it useful!**
 
 Made with ❤️ for disaster relief and humanitarian aid
 
