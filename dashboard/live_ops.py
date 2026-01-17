@@ -3,7 +3,15 @@ from supabase import create_client
 import google.generativeai as genai
 import pandas as pd
 import time
-import cv2
+
+# Try to import cv2, but make it optional for cloud deployment
+try:
+    import cv2
+    CV2_AVAILABLE = True
+except ImportError:
+    CV2_AVAILABLE = False
+    st.warning("⚠️ Camera features disabled (cv2 not available in cloud environment)")
+
 from ultralytics import YOLO
 import numpy as np
 
@@ -210,7 +218,7 @@ with col_chat:
             st.error(f"AI Error: {e}")
 
 # --- 5. VISION LOOP (Persistent & Non-Blocking) ---
-if is_streaming and ip_raw:
+if CV2_AVAILABLE and is_streaming and ip_raw:
     clean_ip = ip_raw.replace("http://", "").replace("https://", "").strip()
     stream_url = f"http://{user_id}:{user_pw}@{clean_ip}/video"
     
@@ -240,6 +248,8 @@ if is_streaming and ip_raw:
             vision_placeholder.image(frame_rgb, channels="RGB", width="stretch")
             
             time.sleep(0.01)
+elif not CV2_AVAILABLE and is_streaming:
+    vision_placeholder.info("📹 Camera streaming is only available in local deployment. \n\nFor cloud demo, the tactical map and Mission AI are fully functional!")
 else:
     if 'cap' in st.session_state:
         st.session_state.cap.release()
