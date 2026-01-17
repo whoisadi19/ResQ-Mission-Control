@@ -10,10 +10,17 @@ try:
     CV2_AVAILABLE = True
 except ImportError:
     CV2_AVAILABLE = False
-    st.warning("⚠️ Camera features disabled (cv2 not available in cloud environment)")
 
-from ultralytics import YOLO
-import numpy as np
+# Try to import YOLO, but make it optional for cloud deployment (since it requires cv2)
+try:
+    from ultralytics import YOLO
+    import numpy as np
+    YOLO_AVAILABLE = True
+except ImportError:
+    YOLO_AVAILABLE = False
+    
+if not CV2_AVAILABLE or not YOLO_AVAILABLE:
+    st.info("ℹ️ Running in cloud mode: Camera and YOLO features disabled. Tactical Map and Mission AI are fully functional!")
 
 # --- 1. CORE CONFIGURATION ---
 st.set_page_config(page_title="ResQ Operations", layout="wide", initial_sidebar_state="collapsed")
@@ -21,6 +28,8 @@ st.set_page_config(page_title="ResQ Operations", layout="wide", initial_sidebar_
 # Load YOLO Model
 @st.cache_resource
 def load_yolo():
+    if not YOLO_AVAILABLE:
+        return None
     try:
         return YOLO("FINAL_RESCUE_MODEL.pt")
     except:
@@ -239,8 +248,11 @@ if CV2_AVAILABLE and is_streaming and ip_raw:
                 del st.session_state.cap
                 break
                 
-            results = model_yolo.predict(frame, conf=0.3, verbose=False)
-            annotated_frame = results[0].plot()
+            if model_yolo is not None:
+                results = model_yolo.predict(frame, conf=0.3, verbose=False)
+                annotated_frame = results[0].plot()
+            else:
+                annotated_frame = frame
             
             frame_rgb = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB)
             
