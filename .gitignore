@@ -1,8 +1,7 @@
 # --- Virtual Environments (CRITICAL) ---
 # You must ignore ALL of these or your upload will be huge
-venv/
-venv_311/
-stable_venv/
+*venv*/
+venv*/
 __pycache__/
 
 # --- Large/Binary Files ---
@@ -28,6 +27,7 @@ runs/  # This is where YOLO saves detection test images automatically
 .DS_Store
 .env
 .vscode/
+.streamlit/secrets.toml  # CRITICAL: Never commit API keys!
 
 training/datasets/
 data/

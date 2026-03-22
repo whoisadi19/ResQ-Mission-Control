@@ -7,12 +7,18 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "FINAL_RESCUE_MODEL.pt")
 
 def run_controlled_demo():
-    # 1. FIND VIDEO
+    # 1. FIND VIDEO (prioritize final trimmed version)
     video_file = None
-    for f in os.listdir(BASE_DIR):
-        if f.startswith("flood_footage") and f.lower().endswith(('.mp4', '.mov', '.avi')):
-            video_file = os.path.join(BASE_DIR, f)
-            break
+    # First try to find the final trimmed version
+    final_video = os.path.join(BASE_DIR, "flood_footage_final.mp4")
+    if os.path.exists(final_video):
+        video_file = final_video
+    else:
+        # Fall back to any flood_footage video
+        for f in os.listdir(BASE_DIR):
+            if f.startswith("flood_footage") and f.lower().endswith(('.mp4', '.mov', '.avi')):
+                video_file = os.path.join(BASE_DIR, f)
+                break
             
     if not video_file:
         print("❌ Could not find video file!")

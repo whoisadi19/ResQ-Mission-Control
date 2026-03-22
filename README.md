@@ -73,24 +73,13 @@ Our custom-trained YOLOv8 model achieves high accuracy in detecting humans and v
 
 ## Dashboard Screenshots
 
-
-### Real-Time Telemetry
-
-<div align="center">
-
-![Dashboard Header](assets/dashboard_header.png)
-
-*Live telemetry metrics: Battery status, GPS coordinates, and signal strength*
-
-</div>
-
-### Tactical Interface
+### Command Center Interface
 
 <div align="center">
 
-![Dashboard Interface](assets/dashboard_interface.png)
+![New Dashboard UI](assets/new_dashboard_full.png)
 
-*Three-panel layout: Live Optics (camera feed), Tactical Map (victim locations), and Mission AI (Gemini assistant)*
+*Military-style command center aesthetic featuring Live Optics, Tactical Map, and Mission AI*
 
 </div>
 
